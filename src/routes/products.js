@@ -49,7 +49,7 @@ router.post("/", adminAuth, async (req, res) => {
 
 //TODO Update product (admin only)
 router.put("/:id", async (req,res) => {
-  const {id} = req.query;
+  const {id} = req.params;
   const body = req.body;
 
   const productData = {...body}
