@@ -56,7 +56,7 @@ router.put("/:id", async (req,res) => {
   delete productData._id
 
   try {
-    const updatedProduct = Product.findOneAndUpdate(id,{$set : req.body},{new: true})
+    const updatedProduct = await Product.findOneAndUpdate(id,{$set : req.body},{new: true})
     
     if(!updatedProduct) {
       throw new Error("Product not found")
