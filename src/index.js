@@ -41,7 +41,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/hakim-livs')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB', process.env.MONGODB_URI))
   .catch(err => console.error('MongoDB connection error:', err));
 
