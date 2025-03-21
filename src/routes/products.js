@@ -1,19 +1,11 @@
 import express from "express";
 import Product from "../models/Product.js";
 import { adminAuth } from "../middleware/auth.js";
-import { readFileSync } from "fs";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
 
 const router = express.Router();
 
-// Get directory path
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 router.get("/", async (req, res) => {
   try {
-    //! DONT USE IN PRODUCTION get products from json file
     const products = await Product.find();
     res.json(products);
     return;
@@ -22,7 +14,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-//TODO Get single product
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
