@@ -39,34 +39,32 @@ router.post("/", adminAuth, async (req, res) => {
 });
 
 //TODO Update product (admin only)
-router.put("/:id", async (req,res) => {
-  const {id} = req.params;
+router.put("/:id", async (req, res) => {
+  const { id } = req.params;
   const body = req.body;
 
-  const productData = {...body}
-  delete productData._id
+  const productData = { ...body };
+  delete productData._id;
 
   try {
-    const updatedProduct = await Product.findOneAndUpdate(id,{$set : req.body},{new: true})
-    
-    if(!updatedProduct) {
-      throw new Error("Product not found")
+    const updatedProduct = await Product.findOneAndUpdate(
+      id,
+      { $set: req.body },
+      { new: true }
+    );
+
+    if (!updatedProduct) {
+      throw new Error("Product not found");
     }
 
     res.json(updatedProduct);
-
-  } catch(error) {
-
+  } catch (error) {
     console.warn("Error in getting product", error);
     res.status(404).json({
       error: "Product not found",
     });
-
   }
-
-  
-
-})
+});
 
 //TODO Delete product (admin only)
 
