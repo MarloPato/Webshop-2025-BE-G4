@@ -20,11 +20,11 @@ const productSchema = new mongoose.Schema({
     default: 0,
     min: 0
   },
-  category: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Category',
-    required: true
-  },
+  // category: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Category',
+  //   required: true
+  // },
   imageUrl: {
     type: String,
     required: true
