@@ -44,7 +44,7 @@ router.put("/:id", async (req, res) => {
     delete categoryData._id;
 
     const updatedCategory = await Category.findByIdAndUpdate(
-      id,
+      {_id: id},
       { $set: categoryData },
       { new: true, runValidators: true }
     );

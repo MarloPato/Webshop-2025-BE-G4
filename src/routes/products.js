@@ -47,10 +47,9 @@ router.put("/:id", async (req, res) => {
   delete productData._id;
 
   try {
-    const updatedProduct = await Product.findOneAndUpdate(
-      id,
-      { $set: req.body },
-      { new: true }
+    const updatedProduct = await Product.findOneAndUpdate({_id: id},
+      { $set: productData },
+      { new: true, runValidators: true }
     );
 
     if (!updatedProduct) {
