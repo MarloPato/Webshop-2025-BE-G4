@@ -13,6 +13,19 @@ router.get('/', async(req,res) => {
     }
 })
 
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const category = await Category.findById(id);
+    res.send(category);
+  } catch (error) {
+    console.warn("Failed to fetch category", error);
+    res.status(404).json({
+      error: "Category not found",
+    });
+  }
+});
+
 router.post("/", async (req, res) => {
   try {
     const newCategory = await new Category(req.body);
