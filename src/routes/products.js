@@ -29,6 +29,7 @@ router.get("/:id", async (req, res) => {
 
 // Create product (admin only)
 router.post("/", adminAuth, async (req, res) => {
+
   try {
     const product = await new Product(req.body);
     await product.save();

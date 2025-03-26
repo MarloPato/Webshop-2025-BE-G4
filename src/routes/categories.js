@@ -27,8 +27,14 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  const category = req.body;
+
+  if(!category.name) {
+    return res.status(400).json({success:false,message: "name demanded"})
+  }
+
   try {
-    const newCategory = await new Category(req.body);
+    const newCategory = await new Category(category);
     await newCategory.save();
     res.status(201).json({ success: true, data: newCategory });
   } catch (error) {
