@@ -3,15 +3,15 @@ import Category from "../models/Category.js";
 
 const router = express.Router();
 
-router.get('/', async(req,res) => {
+router.get("/", async (req, res) => {
   try {
-      const categories = await Category.find();
-      res.json(categories);
-      return;
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-})
+    const categories = await Category.find();
+    res.json(categories);
+    return;
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
@@ -43,8 +43,12 @@ router.put("/:id", async (req, res) => {
     const categoryData = { ...req.body };
     delete categoryData._id;
 
+    if (!req.body.name) {
+      return res.status(500).json({ error: "name is required" });
+    }
+
     const updatedCategory = await Category.findByIdAndUpdate(
-      {_id: id},
+      { _id: id },
       { $set: categoryData },
       { new: true, runValidators: true }
     );
