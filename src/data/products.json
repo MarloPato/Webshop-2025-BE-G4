@@ -1,29 +1,190 @@
 [
     {
-        "_id": "1",
+        "_id": "67e2c4dc3350f00687bace5e",
         "name": "Banana",
-        "price": 0.29,
-        "description": "A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.",
-        "stock": 100,
-        "createdAt": "2025-01-01T00:00:00.000Z",
-        "updatedAt": "2025-01-03T00:00:00.000Z"
+        "price": 32,
+        "description": "test",
+        "stock": 32,
+        "category": "67de9c20b527190c086fc7d1",
+        "imageUrl": "test",
+        "createdAt": "2025-03-25T14:59:40.263Z",
+        "updatedAt": "2025-03-25T14:59:40.263Z",
+        "__v": 0
     },
     {
-        "_id": "2",
+        "_id": "67e2c85b0150f2c9983003b2",
+        "name": "Milk",
+        "price": 32,
+        "description": "liquid from cow..",
+        "stock": 424,
+        "imageUrl": "http://test",
+        "createdAt": "2025-03-25T15:14:35.688Z",
+        "updatedAt": "2025-03-25T15:14:35.688Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c0f51fe271900524aeed",
         "name": "Apple",
         "price": 0.59,
         "description": "An apple is an edible fruit produced by an apple tree.",
         "stock": 50,
-        "createdAt": "2025-01-02T00:00:00.000Z",
-        "updatedAt": "2025-01-02T00:00:00.000Z"
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:17.873Z",
+        "updatedAt": "2025-03-26T08:55:17.873Z",
+        "__v": 0
     },
     {
-        "_id": "3",
-        "name": "Orange",
-        "price": 0.49,
-        "description": "The orange is the fruit of various citrus species in the family Rutaceae.",
-        "stock": 75,
-        "createdAt": "2025-01-03T00:00:00.000Z",
-        "updatedAt": "2025-01-03T00:00:00.000Z"
+        "_id": "67e3c0f7c7113798e9450f34",
+        "name": "Apple",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:19.094Z",
+        "updatedAt": "2025-03-26T08:55:19.094Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c0fd1fe271900524aef0",
+        "name": "Apple",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:25.066Z",
+        "updatedAt": "2025-03-26T08:55:25.066Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c1071fe271900524aef3",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:35.878Z",
+        "updatedAt": "2025-03-26T08:55:35.878Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c10798c1746109bab927",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:35.981Z",
+        "updatedAt": "2025-03-26T08:55:35.981Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c10c1fe271900524aef6",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:40.866Z",
+        "updatedAt": "2025-03-26T08:55:40.866Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c10cc7113798e9450f3a",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:40.972Z",
+        "updatedAt": "2025-03-26T08:55:40.972Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c11198c1746109bab92e",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:45.111Z",
+        "updatedAt": "2025-03-26T08:55:45.111Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c111c7113798e9450f3d",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:45.127Z",
+        "updatedAt": "2025-03-26T08:55:45.127Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c1121fe271900524aef9",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:46.892Z",
+        "updatedAt": "2025-03-26T08:55:46.892Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c112c7113798e9450f3f",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:46.895Z",
+        "updatedAt": "2025-03-26T08:55:46.895Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c11dc7113798e9450f41",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:57.791Z",
+        "updatedAt": "2025-03-26T08:55:57.791Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3c11d98c1746109bab933",
+        "name": "Yoghurt",
+        "price": 0.59,
+        "description": "An apple is an edible fruit produced by an apple tree.",
+        "stock": 50,
+        "imageUrl": "{}",
+        "createdAt": "2025-03-26T08:55:57.882Z",
+        "updatedAt": "2025-03-26T08:55:57.882Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e3df9bb1e809f610948ccc",
+        "name": "Coke",
+        "price": 45,
+        "description": "test",
+        "stock": 34,
+        "imageUrl": "testt",
+        "createdAt": "2025-03-26T11:06:03.570Z",
+        "updatedAt": "2025-03-26T11:06:03.570Z",
+        "__v": 0
+    },
+    {
+        "_id": "67e6534d68db1ea7e4e27192",
+        "name": "test",
+        "price": 322,
+        "description": "teata",
+        "stock": 32,
+        "imageUrl": "http://test.img",
+        "createdAt": "2025-03-28T07:44:13.550Z",
+        "updatedAt": "2025-03-28T07:44:13.550Z",
+        "__v": 0
     }
 ]

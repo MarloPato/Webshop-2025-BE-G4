@@ -6,6 +6,14 @@ import authRoutes from './routes/auth.js';
 import productRoutes from './routes/products.js';
 import categoryRoutes from './routes/categories.js'
 
+// Import data migration
+import dataMigrationRouterCommon from "./migration/data.migration.route_module.js";
+import Product from "./models/Product.js";
+import Category from "./models/Category.js";
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+
 dotenv.config();
 
 const app = express();
@@ -14,6 +22,22 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors('*'));
 app.use(express.json());
+
+
+// Kod för data migrationen
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const dataPathProducts = join(__dirname, "data", "products.json");
+const dataPathCategories = join(__dirname, "data", "categories.json");
+
+app.use(
+  "/api/data-migration/products",
+  dataMigrationRouterCommon(Product, dataPathProducts)
+);
+app.use(
+  "/api/data-migration/categories",
+  dataMigrationRouterCommon(Category, dataPathCategories)
+);
 
 // API Documentation route
 app.get('/api', (req, res) => {
