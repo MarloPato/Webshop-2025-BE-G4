@@ -6,22 +6,32 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    m
+    minlength: 3,
+    maxlength: 30
   },
   lastname: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    minlength: 1,
+    maxlength: 30
   },
   email: {
     type: String,
     required: true,
     unique: true,
-    trim: true
+    trim: true,
+    lowercase: true,
+    maxlength: 320, // Max enligt standarden för e-post
+    match: [
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      "Ogiltig e-postadress",
+    ]
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    minlength: 8
   },
   isAdmin: {
     type: Boolean,
