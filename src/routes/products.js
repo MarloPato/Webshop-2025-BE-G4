@@ -1,5 +1,6 @@
 import express from "express";
 import Product from "../models/Product.js";
+import Category from "../models/Category.js";
 import { adminAuth } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -11,6 +12,37 @@ router.get("/", async (req, res) => {
     return;
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+router.get("/bycategory", async (req, res) => {
+  try {
+    const { category } = req.query;
+    console.log(category);
+
+    if (!category) {
+      return res.status(400).json({ message: "Category is required" }); 
+    }
+
+    const categoryExists = await Category.findOne({ name: category });
+    if (!categoryExists) {
+      return res.status(404).json({ message: "This category doesn't exist" });
+    }
+
+
+    const products = await Product.find({ category: categoryExists._id }).populate('category', 'name _id');
+
+
+    if (products.length === 0) {
+      return res.status(404).json({ message: "No products found in this category" });
+    }
+
+    res.status(200).json(products); 
+  } catch (error) {
+    console.warn("Failed to fetch products", error);
+    res.status(500).json({
+      error: "Server error, failed to fetch products",
+    });
   }
 });
 
