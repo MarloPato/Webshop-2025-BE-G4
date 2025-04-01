@@ -1,9 +1,10 @@
 import express from "express";
 import Category from "../models/Category.js";
+import { auth, adminAuth } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     const categories = await Category.find();
     res.json(categories);
@@ -13,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", auth, async (req, res) => {
   const { id } = req.params;
   try {
     const category = await Category.findById(id);
@@ -26,11 +27,11 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", adminAuth, async (req, res) => {
   const category = req.body;
 
-  if(!category.name) {
-    return res.status(400).json({success:false,message: "name demanded"})
+  if (!category.name) {
+    return res.status(400).json({ success: false, message: "name demanded" });
   }
 
   try {
@@ -42,8 +43,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// uppdatera befintlig kategori
-router.put("/:id", async (req, res) => {
+router.put("/:id", adminAuth, async (req, res) => {
   try {
     const { id } = req.params;
     const categoryData = { ...req.body };
@@ -70,8 +70,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// ta bort en befintlig kategori
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", adminAuth, async (req, res) => {
   try {
     const { id } = req.params;
 
