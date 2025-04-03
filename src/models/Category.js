@@ -7,7 +7,7 @@ const categorySchema = new mongoose.Schema({
         unique: true,
         lowercase: true,
         trim: true,
-        match: [/^[a-zA-Z]+$/, 'Category name can only contain letters']
+        match: [/^(?=.*[a-zA-Z])[\w\s\-]+$/, 'Product name must contain at least one letter and cannot consist of only numbers or special characters']
     }
 }, { timestamps: true });
 

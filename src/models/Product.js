@@ -4,7 +4,8 @@ const productSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    match: [/^(?=.*[a-zA-Z])[\w\s\-]+$/, 'Product name must contain at least one letter and cannot consist of only numbers or special characters']
   },
   price: {
     type: Number,
