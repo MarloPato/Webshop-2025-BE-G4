@@ -55,6 +55,9 @@ router.get("/:id", auth, async (req, res) => {
   const { id } = req.params;
   try {
     const product = await Product.findById(id);
+    if (!product) {
+      throw new Error("Product not found");
+    }
     res.send(product);
   } catch (error) {
     console.warn("Failed to fetch product", error);
