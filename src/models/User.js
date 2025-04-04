@@ -33,6 +33,12 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 8
   },
+  orders: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Order'
+    }
+  ],
   isAdmin: {
     type: Boolean,
     default: false

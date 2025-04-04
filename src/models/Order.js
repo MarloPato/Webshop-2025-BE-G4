@@ -1,0 +1,54 @@
+import mongoose from 'mongoose';
+
+const orderSchema = new mongoose.Schema({
+    user: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User', 
+        required: false 
+      },
+    firstname: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 3,
+        maxlength: 30,
+        match: [/^[A-Za-zåäöÅÄÖ]+$/, 'Firstname must contain only letters']
+      },
+      lastname: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1,
+        maxlength: 30,
+        match: [/^[A-Za-zåäöÅÄÖ]+$/, 'Lastname must contain only letters']
+      },
+      phonenumber: {
+        type: String,
+        required: true,
+        match: [/^\d{10}$/, 'Phone number must be 10 digits']
+      },
+      products: [
+        {
+          productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
+          name: { type: String, required: true },
+          price: { type: Number, required: true },
+          quantity: { type: Number, required: true }
+        }
+      ],
+      shippingAddress: {
+        street: { type: String, required: true },
+        number: { type: String, required: true },    
+        zipCode: { type: String, required: true },    
+        city: { type: String, required: true, match: [/^[A-Za-zåäöÅÄÖ]+$/, 'City must contain only letters'] }
+      },
+      status: {
+        type: String,
+        enum: ['mottagen', 'behandlas', 'skickad', 'levererad', 'avbruten'],
+        default: 'mottagen'
+      },
+      totalPrice: { type: Number, required: true }
+},{timestamps: true})
+
+orderSchema.methods.calculateTotalPrice = function() {
+    this.totalPrice = this.products.reduce((total, product) => total + (product.price * product.quantity), 0);
+}
