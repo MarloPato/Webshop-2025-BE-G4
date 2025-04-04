@@ -49,6 +49,13 @@ const orderSchema = new mongoose.Schema({
       totalPrice: { type: Number, required: true }
 },{timestamps: true})
 
-orderSchema.methods.calculateTotalPrice = function() {
-    this.totalPrice = this.products.reduce((total, product) => total + (product.price * product.quantity), 0);
-}
+orderSchema.pre('save', function(next) {
+    if (this.products && this.products.length > 0) {
+      this.totalPrice = this.products.reduce(
+        (total, product) => total + (product.price * product.quantity),
+        0
+      );
+    }
+    
+    next();
+  });
