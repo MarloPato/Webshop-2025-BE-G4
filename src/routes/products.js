@@ -94,14 +94,16 @@ router.put("/:id", adminAuth, async (req, res) => {
     );
 
     if (!updatedProduct) {
-      throw new Error("Product not found");
+      res.status(404).json({
+        error: "Product not found",
+      });
     }
 
     res.json(updatedProduct);
   } catch (error) {
     console.warn("Error in getting product", error);
-    res.status(404).json({
-      error: "Product not found",
+    res.status(400).json({
+      error: "Invalid value/s",
     });
   }
 });
