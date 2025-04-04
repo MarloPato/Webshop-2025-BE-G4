@@ -6,7 +6,7 @@ import { auth, adminAuth } from "../middleware/auth.js";
 const router = express.Router();
 
 // Hämta alla produkter (endast inloggade användare)
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const products = await Product.find();
     res.json(products);
@@ -17,7 +17,7 @@ router.get("/", auth, async (req, res) => {
 });
 
 // Hämta produkter efter kategori (endast inloggade användare)
-router.get("/bycategory", auth, async (req, res) => {
+router.get("/bycategory", async (req, res) => {
   try {
     const { category } = req.query;
     console.log(category);
@@ -51,7 +51,7 @@ router.get("/bycategory", auth, async (req, res) => {
 });
 
 // Hämta produkt via ID (endast inloggade användare)
-router.get("/:id", auth, async (req, res) => {
+router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const product = await Product.findById(id);
