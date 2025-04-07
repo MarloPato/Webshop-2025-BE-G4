@@ -7,14 +7,24 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minlength: 3,
-    maxlength: 30
+    maxlength: 30,
+    match: [
+      /^[A-Za-zÀ-ÖØ-öø-ÿÅÄÖåäö\s'-]+$/,
+      'Förnamnet får endast innehålla bokstäver, mellanslag, bindestreck eller apostrof'
+    ]
+    
   },
   lastname: {
     type: String,
     required: true,
     trim: true,
     minlength: 1,
-    maxlength: 30
+    maxlength: 30,
+    match: [
+      /^[A-Za-zÀ-ÖØ-öø-ÿÅÄÖåäö\s'-]+$/,
+      'Efternamnet får endast innehålla bokstäver, mellanslag, bindestreck eller apostrof'
+    ]
+    
   },
   email: {
     type: String,
@@ -31,7 +41,12 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 8
+    minlength: 8,
+    match: [
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
+      'Lösenordet måste vara minst 8 tecken långt och innehålla en stor bokstav, en liten bokstav, en siffra och ett specialtecken'
+    ]
+    
   },
   orders: [
     {
