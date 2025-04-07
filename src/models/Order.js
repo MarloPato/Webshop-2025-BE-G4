@@ -58,7 +58,7 @@ const orderSchema = new mongoose.Schema({
         enum: ['mottagen', 'behandlas', 'skickad', 'levererad', 'avbruten'],
         default: 'mottagen'
       },
-      totalPrice: { type: Number, required: true }
+      totalPrice: { type: Number, default: 0 }
 },{timestamps: true})
 
 orderSchema.pre('save', function(next) {
