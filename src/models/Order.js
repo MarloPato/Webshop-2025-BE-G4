@@ -27,6 +27,18 @@ const orderSchema = new mongoose.Schema({
         required: true,
         match: [/^\d{10}$/, 'Phone number must be 10 digits']
       },
+      email: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        lowercase: true,
+        maxlength: 60,
+        match: [
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+          "Ogiltig e-postadress",
+        ]
+      },
       products: [
         {
           productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
