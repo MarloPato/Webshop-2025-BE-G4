@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     unique: true,
     trim: true,
     lowercase: true,
-    maxlength: 320, // Max enligt standarden för e-post
+    maxlength: 60,
     match: [
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       "Ogiltig e-postadress",
@@ -62,14 +62,14 @@ const userSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Hash password before saving
+
 userSchema.pre('save', async function(next) {
   if (!this.isModified('password')) return next();
   this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
-// Method to compare passwords
+
 userSchema.methods.comparePassword = async function(candidatePassword) {
   return bcrypt.compare(candidatePassword, this.password);
 };
