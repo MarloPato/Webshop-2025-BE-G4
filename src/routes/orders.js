@@ -3,9 +3,7 @@ import express from 'express'
 import Order from '../models/Order.js'
 import User from '../models/User.js'
 import { auth, adminAuth } from '../middleware/auth.js'
-import Product from '../models/Product.js'
-import mongoose from 'mongoose'
-import Category from '../models/Category.js'
+
 
 const router = express.Router()
 
@@ -21,9 +19,9 @@ router.get('/', adminAuth, async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { firstname, lastname, phonenumber, products, shippingAddress } = req.body
+    const { firstname, lastname, phonenumber, email, products, shippingAddress } = req.body
 
-    if (!firstname || !lastname || !phonenumber || !products || !shippingAddress) {
+    if (!firstname || !lastname || !phonenumber || !email || !products || !shippingAddress) {
       return res.status(400).json({ message: 'All fields are required' })
     }
 
@@ -41,6 +39,7 @@ router.post('/', async (req, res) => {
       firstname,
       lastname,
       phonenumber,
+      email,
       products,
       shippingAddress
     })
