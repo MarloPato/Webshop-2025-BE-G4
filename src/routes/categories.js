@@ -4,7 +4,7 @@ import { auth, adminAuth } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const categories = await Category.find();
     res.json(categories);
@@ -14,7 +14,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-router.get("/:id", auth, async (req, res) => {
+router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const category = await Category.findById(id);
