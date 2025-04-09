@@ -46,7 +46,8 @@ app.get("/api", (req, res) => {
     endpoints: {
       auth: {
         "POST /api/auth/register": "Register a new user",
-        "POST /api/auth/login": "Login with username and password",
+        "POST /api/auth/login": "Login with email and password",
+        "GET /api/auth/me": "Get current logged-in user info (requires token)",
       },
       products: {
         "GET /api/products": "Get all products",
@@ -62,6 +63,11 @@ app.get("/api", (req, res) => {
         "POST /api/categories": "Create a new category (Admin only)",
         "PUT /api/categories/:id": "Update single category (Admin only)",
         "DELETE /api/categories/:id": "Delete a category (Admin only)",
+      },
+      orders: {
+        "GET /api/orders": "Get all orders (Admin only)",
+        "POST /api/orders": "Create a new order",
+        "PUT /api/orders/:id": "Update an order (Admin only)",
       },
     },
     authentication:
