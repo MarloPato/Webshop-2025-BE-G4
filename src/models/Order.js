@@ -10,7 +10,7 @@ const orderSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: 3,
+        minlength: 1,
         maxlength: 30,
         match: [/^[A-Za-zåäöÅÄÖ]+$/, 'Firstname must contain only letters']
       },
@@ -47,9 +47,26 @@ const orderSchema = new mongoose.Schema({
         }
       ],
       shippingAddress: {
-        street: { type: String, required: true},
-        number: { type: String, required: true },    
-        zipCode: { type: String, required: true },    
+        street: {
+          type: String,
+          required: true,
+          match: [/^[A-Za-zåäöÅÄÖ\s\-]+$/, 'Street must contain only letters, spaces or hyphens'],
+          maxlength: 50
+        },        
+        number: {
+          type: String,
+          required: true,
+          match: [/^\d+[A-Za-z]?$/, 'Street number must be numeric, optionally followed by a letter'],
+          maxlength: 10
+        }
+        ,    
+        zipCode: {
+          type: String,
+          required: true,
+          match: [/^\d{3}\s?\d{2}$/, 'Zip code must be in the format 12345 or 123 45'],
+          maxlength: 10
+        }
+        ,    
         city: { type: String, required: true, match: [/^[A-Za-zåäöÅÄÖ]+$/, 'City must contain only letters'] }
       },
       status: {
