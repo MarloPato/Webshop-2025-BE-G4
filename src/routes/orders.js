@@ -53,4 +53,38 @@ router.post('/', async (req, res) => {
 }
 )
 
+router.put('/:id', adminAuth, async (req, res) => {
+  const { id } = req.params;
+  const body = req.body;
+
+  const orderData = { ...body };
+  delete orderData._id;
+
+  // Räknar om totalpris om produkter ändrats
+  if (orderData.products && Array.isArray(orderData.products)) {
+    orderData.totalPrice = orderData.products.reduce(
+      (total, product) => total + (product.price * product.quantity),
+      0
+    );
+  }
+
+  try {
+    const updatedOrder = await Order.findOneAndUpdate(
+      { _id: id },
+      { $set: orderData },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedOrder) {
+      return res.status(404).json({ message: 'Order not found' });
+    }
+
+    res.json(updatedOrder);
+  } catch (error) {
+    console.warn("Error updating order", error);
+    res.status(400).json({ error: "Invalid value/s" });
+  }
+});
+
+
 export default router;
