@@ -1,4 +1,5 @@
 import express from "express";
+import { readFile } from "fs/promises";
 
 /**
  * @description This function is used to create a route for data migration and teardown
@@ -11,7 +12,8 @@ function dataMigrationRouter(model, dataPath) {
 
   router.post("/migrate/", async (req, res) => {
     try {
-      const data = await import(dataPath, { assert: { type: "json" } });
+      const fileContent = await readFile(dataPath, "utf-8");
+      const data = JSON.parse(fileContent);
 
       await model.bulkWrite(
         data.default.map((item) => {
