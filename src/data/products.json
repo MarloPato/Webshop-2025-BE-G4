@@ -5,7 +5,10 @@
     "description": "Soft white bread, perfect for sandwiches.",
     "stock": 100,
     "imageUrl": "https://www.istockphoto.com/photos/white-bread",
-    "category": "a5915497c8b1cf9fc8d23f29"
+    "category": {
+      "_id": "a5915497c8b1cf9fc8d23f29",
+      "name": "bread"
+    }
   },
   {
     "name": "Whole Grain Bread",
@@ -13,7 +16,10 @@
     "description": "Healthy whole grain bread full of fiber.",
     "stock": 80,
     "imageUrl": "https://www.istockphoto.com/photos/whole-grain-bread",
-    "category": "a5915497c8b1cf9fc8d23f29"
+    "category": {
+      "_id": "a5915497c8b1cf9fc8d23f29",
+      "name": "bread"
+    }
   },
   {
     "name": "Chicken Breast",
@@ -21,7 +27,10 @@
     "description": "Boneless, skinless chicken breast, perfect for grilling.",
     "stock": 60,
     "imageUrl": "https://www.shutterstock.com/search/chicken-breast",
-    "category": "4951a0d6af8761636cc4282b"
+    "category": {
+      "_id": "4951a0d6af8761636cc4282b",
+      "name": "meat"
+    }
   },
   {
     "name": "Ground Beef",
@@ -29,7 +38,10 @@
     "description": "Freshly ground beef with 80% lean meat.",
     "stock": 70,
     "imageUrl": "https://stock.adobe.com/search?k=ground+beef+package",
-    "category": "4951a0d6af8761636cc4282b"
+    "category": {
+      "_id": "4951a0d6af8761636cc4282b",
+      "name": "meat"
+    }
   },
   {
     "name": "Milk",
@@ -37,7 +49,10 @@
     "description": "1 liter of fresh cow milk.",
     "stock": 200,
     "imageUrl": "https://www.istockphoto.com/photos/dairy-products",
-    "category": "bde9e101d4cac1061f8f0e95"
+    "category": {
+      "_id": "bde9e101d4cac1061f8f0e95",
+      "name": "dairy"
+    }
   },
   {
     "name": "Yoghurt",
@@ -45,7 +60,10 @@
     "description": "Creamy plain yoghurt, 500ml.",
     "stock": 150,
     "imageUrl": "https://www.istockphoto.com/photos/yogurt",
-    "category": "bde9e101d4cac1061f8f0e95"
+    "category": {
+      "_id": "bde9e101d4cac1061f8f0e95",
+      "name": "dairy"
+    }
   },
   {
     "name": "Apple",
@@ -53,7 +71,10 @@
     "description": "Crispy red apples, sold per piece.",
     "stock": 300,
     "imageUrl": "https://unsplash.com/s/photos/apple",
-    "category": "58c338d56ff6bddbb1cdcaf6"
+    "category": {
+      "_id": "58c338d56ff6bddbb1cdcaf6",
+      "name": "fruits"
+    }
   },
   {
     "name": "Banana",
@@ -61,7 +82,10 @@
     "description": "Fresh bananas, rich in potassium.",
     "stock": 250,
     "imageUrl": "https://unsplash.com/s/photos/banana",
-    "category": "58c338d56ff6bddbb1cdcaf6"
+    "category": {
+      "_id": "58c338d56ff6bddbb1cdcaf6",
+      "name": "fruits"
+    }
   },
   {
     "name": "Coca Cola",
@@ -69,7 +93,10 @@
     "description": "Refreshing cola drink, 500ml.",
     "stock": 100,
     "imageUrl": "https://www.coca-cola.com/us/en/brands/coca-cola",
-    "category": "5c1f40ccac4ce1ee7ef61dc1"
+    "category": {
+      "_id": "5c1f40ccac4ce1ee7ef61dc1",
+      "name": "beverages"
+    }
   },
   {
     "name": "Orange Juice",
@@ -77,7 +104,10 @@
     "description": "Pure orange juice with no added sugar.",
     "stock": 90,
     "imageUrl": "https://unsplash.com/s/photos/orange-juice",
-    "category": "5c1f40ccac4ce1ee7ef61dc1"
+    "category": {
+      "_id": "5c1f40ccac4ce1ee7ef61dc1",
+      "name": "beverages"
+    }
   },
   {
     "name": "Potato Chips",
@@ -85,7 +115,10 @@
     "description": "Crunchy salted potato chips.",
     "stock": 110,
     "imageUrl": "https://www.istockphoto.com/photos/bag-of-potato-chips",
-    "category": "bc762ce5dd44e1429b054527"
+    "category": {
+      "_id": "bc762ce5dd44e1429b054527",
+      "name": "snacks"
+    }
   },
   {
     "name": "Chocolate Bar",
@@ -93,6 +126,9 @@
     "description": "Milk chocolate bar, 100g.",
     "stock": 130,
     "imageUrl": "https://unsplash.com/s/photos/chocolate-bar",
-    "category": "bc762ce5dd44e1429b054527"
+    "category": {
+      "_id": "bc762ce5dd44e1429b054527",
+      "name": "snacks"
+    }
   }
 ]
