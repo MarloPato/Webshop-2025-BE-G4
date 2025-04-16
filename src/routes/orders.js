@@ -34,6 +34,7 @@ router.post('/', async (req, res) => {
       try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET); // eller din hemlighet
         user = await User.findById(decoded.userId); // justera om du använder annan nyckel
+        console.log(user);
       } catch (err) {
         console.log("Kunde inte verifiera token, fortsätter utan användare");
       }
