@@ -1,5 +1,5 @@
 import express from 'express'
-
+import jwt from 'jsonwebtoken'
 import Order from '../models/Order.js'
 import User from '../models/User.js'
 import { auth, adminAuth } from '../middleware/auth.js'
@@ -26,13 +26,25 @@ router.post('/', async (req, res) => {
     }
 
     let user = null;
-    
-    if (req.user && req.user._id) {
-      user = await User.findById(req.user._id);
-      if (!user) {
-        return res.status(404).json({ message: 'User not found' });
+
+    const authHeader = req.headers.authorization;
+    if (authHeader && authHeader.startsWith("Bearer ")) {
+      const token = authHeader.split(" ")[1];
+
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET); // eller din hemlighet
+        user = await User.findById(decoded.userId); // justera om du använder annan nyckel
+      } catch (err) {
+        console.log("Kunde inte verifiera token, fortsätter utan användare");
       }
     }
+    
+    // if (req.user && req.user._id) {
+    //   user = await User.findById(req.user._id);
+    //   if (!user) {
+    //     return res.status(404).json({ message: 'User not found' });
+    //   }
+    // }
 
     const order = new Order({
       user: user ? user._id : null,
