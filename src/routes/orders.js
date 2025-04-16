@@ -48,7 +48,7 @@ router.post('/', async (req, res) => {
     // }
 
     const order = new Order({
-      user: user ? user._id : null,
+      user: user ? user.id : null,
       firstname,
       lastname,
       phonenumber,
