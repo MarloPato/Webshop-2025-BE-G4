@@ -5,18 +5,17 @@ import { auth, adminAuth } from "../middleware/auth.js";
 
 const router = express.Router();
 
-// Hämta alla produkter (endast inloggade användare)
+// Hämta alla produkter och inkludera kategori
 router.get("/", async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.find().populate("category", "name _id");
     res.json(products);
-    return;
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
 
-// Hämta produkter efter kategori (endast inloggade användare)
+// Hämta produkter efter kategori
 router.get("/bycategory", async (req, res) => {
   try {
     const { category } = req.query;
@@ -50,7 +49,7 @@ router.get("/bycategory", async (req, res) => {
   }
 });
 
-// Hämta produkt via ID (endast inloggade användare)
+// Hämta produkt via ID
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {

@@ -1,190 +1,134 @@
 [
-    {
-        "_id": "67e2c4dc3350f00687bace5e",
-        "name": "Banana",
-        "price": 32,
-        "description": "test",
-        "stock": 32,
-        "category": "67de9c20b527190c086fc7d1",
-        "imageUrl": "test",
-        "createdAt": "2025-03-25T14:59:40.263Z",
-        "updatedAt": "2025-03-25T14:59:40.263Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e2c85b0150f2c9983003b2",
-        "name": "Milk",
-        "price": 32,
-        "description": "liquid from cow..",
-        "stock": 424,
-        "imageUrl": "http://test",
-        "createdAt": "2025-03-25T15:14:35.688Z",
-        "updatedAt": "2025-03-25T15:14:35.688Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c0f51fe271900524aeed",
-        "name": "Apple",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:17.873Z",
-        "updatedAt": "2025-03-26T08:55:17.873Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c0f7c7113798e9450f34",
-        "name": "Apple",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:19.094Z",
-        "updatedAt": "2025-03-26T08:55:19.094Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c0fd1fe271900524aef0",
-        "name": "Apple",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:25.066Z",
-        "updatedAt": "2025-03-26T08:55:25.066Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c1071fe271900524aef3",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:35.878Z",
-        "updatedAt": "2025-03-26T08:55:35.878Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c10798c1746109bab927",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:35.981Z",
-        "updatedAt": "2025-03-26T08:55:35.981Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c10c1fe271900524aef6",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:40.866Z",
-        "updatedAt": "2025-03-26T08:55:40.866Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c10cc7113798e9450f3a",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:40.972Z",
-        "updatedAt": "2025-03-26T08:55:40.972Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c11198c1746109bab92e",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:45.111Z",
-        "updatedAt": "2025-03-26T08:55:45.111Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c111c7113798e9450f3d",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:45.127Z",
-        "updatedAt": "2025-03-26T08:55:45.127Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c1121fe271900524aef9",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:46.892Z",
-        "updatedAt": "2025-03-26T08:55:46.892Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c112c7113798e9450f3f",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:46.895Z",
-        "updatedAt": "2025-03-26T08:55:46.895Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c11dc7113798e9450f41",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:57.791Z",
-        "updatedAt": "2025-03-26T08:55:57.791Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3c11d98c1746109bab933",
-        "name": "Yoghurt",
-        "price": 0.59,
-        "description": "An apple is an edible fruit produced by an apple tree.",
-        "stock": 50,
-        "imageUrl": "{}",
-        "createdAt": "2025-03-26T08:55:57.882Z",
-        "updatedAt": "2025-03-26T08:55:57.882Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e3df9bb1e809f610948ccc",
-        "name": "Coke",
-        "price": 45,
-        "description": "test",
-        "stock": 34,
-        "imageUrl": "testt",
-        "createdAt": "2025-03-26T11:06:03.570Z",
-        "updatedAt": "2025-03-26T11:06:03.570Z",
-        "__v": 0
-    },
-    {
-        "_id": "67e6534d68db1ea7e4e27192",
-        "name": "test",
-        "price": 322,
-        "description": "teata",
-        "stock": 32,
-        "imageUrl": "http://test.img",
-        "createdAt": "2025-03-28T07:44:13.550Z",
-        "updatedAt": "2025-03-28T07:44:13.550Z",
-        "__v": 0
+  {
+    "name": "White Bread",
+    "price": 25,
+    "description": "Soft white bread, perfect for sandwiches.",
+    "stock": 100,
+    "imageUrl": "https://www.istockphoto.com/photos/white-bread",
+    "category": {
+      "_id": "a5915497c8b1cf9fc8d23f29",
+      "name": "bread"
     }
+  },
+  {
+    "name": "Whole Grain Bread",
+    "price": 30,
+    "description": "Healthy whole grain bread full of fiber.",
+    "stock": 80,
+    "imageUrl": "https://www.istockphoto.com/photos/whole-grain-bread",
+    "category": {
+      "_id": "a5915497c8b1cf9fc8d23f29",
+      "name": "bread"
+    }
+  },
+  {
+    "name": "Chicken Breast",
+    "price": 65,
+    "description": "Boneless, skinless chicken breast, perfect for grilling.",
+    "stock": 60,
+    "imageUrl": "https://www.shutterstock.com/search/chicken-breast",
+    "category": {
+      "_id": "4951a0d6af8761636cc4282b",
+      "name": "meat"
+    }
+  },
+  {
+    "name": "Ground Beef",
+    "price": 55,
+    "description": "Freshly ground beef with 80% lean meat.",
+    "stock": 70,
+    "imageUrl": "https://stock.adobe.com/search?k=ground+beef+package",
+    "category": {
+      "_id": "4951a0d6af8761636cc4282b",
+      "name": "meat"
+    }
+  },
+  {
+    "name": "Milk",
+    "price": 20,
+    "description": "1 liter of fresh cow milk.",
+    "stock": 200,
+    "imageUrl": "https://www.istockphoto.com/photos/dairy-products",
+    "category": {
+      "_id": "bde9e101d4cac1061f8f0e95",
+      "name": "dairy"
+    }
+  },
+  {
+    "name": "Yoghurt",
+    "price": 15,
+    "description": "Creamy plain yoghurt, 500ml.",
+    "stock": 150,
+    "imageUrl": "https://www.istockphoto.com/photos/yogurt",
+    "category": {
+      "_id": "bde9e101d4cac1061f8f0e95",
+      "name": "dairy"
+    }
+  },
+  {
+    "name": "Apple",
+    "price": 5,
+    "description": "Crispy red apples, sold per piece.",
+    "stock": 300,
+    "imageUrl": "https://unsplash.com/s/photos/apple",
+    "category": {
+      "_id": "58c338d56ff6bddbb1cdcaf6",
+      "name": "fruits"
+    }
+  },
+  {
+    "name": "Banana",
+    "price": 4,
+    "description": "Fresh bananas, rich in potassium.",
+    "stock": 250,
+    "imageUrl": "https://unsplash.com/s/photos/banana",
+    "category": {
+      "_id": "58c338d56ff6bddbb1cdcaf6",
+      "name": "fruits"
+    }
+  },
+  {
+    "name": "Coca Cola",
+    "price": 22,
+    "description": "Refreshing cola drink, 500ml.",
+    "stock": 100,
+    "imageUrl": "https://www.coca-cola.com/us/en/brands/coca-cola",
+    "category": {
+      "_id": "5c1f40ccac4ce1ee7ef61dc1",
+      "name": "beverages"
+    }
+  },
+  {
+    "name": "Orange Juice",
+    "price": 28,
+    "description": "Pure orange juice with no added sugar.",
+    "stock": 90,
+    "imageUrl": "https://unsplash.com/s/photos/orange-juice",
+    "category": {
+      "_id": "5c1f40ccac4ce1ee7ef61dc1",
+      "name": "beverages"
+    }
+  },
+  {
+    "name": "Potato Chips",
+    "price": 18,
+    "description": "Crunchy salted potato chips.",
+    "stock": 110,
+    "imageUrl": "https://www.istockphoto.com/photos/bag-of-potato-chips",
+    "category": {
+      "_id": "bc762ce5dd44e1429b054527",
+      "name": "snacks"
+    }
+  },
+  {
+    "name": "Chocolate Bar",
+    "price": 12,
+    "description": "Milk chocolate bar, 100g.",
+    "stock": 130,
+    "imageUrl": "https://unsplash.com/s/photos/chocolate-bar",
+    "category": {
+      "_id": "bc762ce5dd44e1429b054527",
+      "name": "snacks"
+    }
+  }
 ]
