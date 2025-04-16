@@ -1,17 +1,26 @@
 [
-    {
-        "_id": "67e3e15b6b94cbac0b63a8b4",
-        "name": "bread",
-        "__v": 0
-    },
-    {
-        "_id": "67e3e5ae1f9e0a621280ee20",
-        "name": "meat",
-        "__v": 0
-    },
-    {
-        "_id": "67e3e5bf1f9e0a621280ee22",
-        "name": "breads",
-        "__v": 0
-    }
+  {
+    "_id": "a5915497c8b1cf9fc8d23f29",
+    "name": "bread"
+  },
+  {
+    "_id": "4951a0d6af8761636cc4282b",
+    "name": "meat"
+  },
+  {
+    "_id": "bde9e101d4cac1061f8f0e95",
+    "name": "dairy"
+  },
+  {
+    "_id": "58c338d56ff6bddbb1cdcaf6",
+    "name": "fruits"
+  },
+  {
+    "_id": "5c1f40ccac4ce1ee7ef61dc1",
+    "name": "beverages"
+  },
+  {
+    "_id": "bc762ce5dd44e1429b054527",
+    "name": "snacks"
+  }
 ]
