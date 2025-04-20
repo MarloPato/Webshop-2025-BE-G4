@@ -5,7 +5,7 @@ import { auth, adminAuth } from "../middleware/auth.js";
 
 const router = express.Router();
 
-// Hämta alla produkter och inkludera kategori
+// Get all products and include category
 router.get("/", async (req, res) => {
   try {
     const products = await Product.find().populate("category", "name _id");
@@ -15,24 +15,33 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Hämta produkter efter kategori
+// Get products by category
 router.get("/bycategory", async (req, res) => {
   try {
     const { category } = req.query;
-    console.log(category);
+    console.log("Category query:", category);
 
     if (!category) {
       return res.status(400).json({ message: "Category is required" });
     }
 
-    const categoryExists = await Category.findOne({ name: category });
-    if (!categoryExists) {
+    // Find the category by name (case insensitive)
+    const categoryDoc = await Category.findOne({
+      name: { $regex: new RegExp("^" + category + "$", "i") },
+    });
+
+    if (!categoryDoc) {
       return res.status(404).json({ message: "This category doesn't exist" });
     }
 
+    console.log("Found category:", categoryDoc);
+
+    // Find products with this category ID
     const products = await Product.find({
-      category: categoryExists._id,
+      category: categoryDoc._id,
     }).populate("category", "name _id");
+
+    console.log("Found products:", products.length);
 
     if (products.length === 0) {
       return res
@@ -42,18 +51,18 @@ router.get("/bycategory", async (req, res) => {
 
     res.status(200).json(products);
   } catch (error) {
-    console.warn("Failed to fetch products", error);
+    console.error("Failed to fetch products by category:", error);
     res.status(500).json({
       error: "Server error, failed to fetch products",
     });
   }
 });
 
-// Hämta produkt via ID
+// Get product by ID
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const product = await Product.findById(id);
+    const product = await Product.findById(id).populate("category", "name _id");
     if (!product) {
       throw new Error("Product not found");
     }
@@ -66,7 +75,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// Skapa produkt (endast admin)
+// Create product (admin only)
 router.post("/", adminAuth, async (req, res) => {
   try {
     const product = await new Product(req.body);
@@ -77,7 +86,7 @@ router.post("/", adminAuth, async (req, res) => {
   }
 });
 
-// Uppdatera produkt (endast admin)
+// Update product (admin only)
 router.put("/:id", adminAuth, async (req, res) => {
   const { id } = req.params;
   const body = req.body;
@@ -90,7 +99,7 @@ router.put("/:id", adminAuth, async (req, res) => {
       { _id: id },
       { $set: productData },
       { new: true, runValidators: true }
-    );
+    ).populate("category", "name _id");
 
     if (!updatedProduct) {
       res.status(404).json({
@@ -100,14 +109,14 @@ router.put("/:id", adminAuth, async (req, res) => {
 
     res.json(updatedProduct);
   } catch (error) {
-    console.warn("Error in getting product", error);
+    console.warn("Error updating product", error);
     res.status(400).json({
       error: "Invalid value/s",
     });
   }
 });
 
-// Radera produkt (endast admin)
+// Delete product (admin only)
 router.delete("/:id", adminAuth, async (req, res) => {
   try {
     const { id } = req.params;
